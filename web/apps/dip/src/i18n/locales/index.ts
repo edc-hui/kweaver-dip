@@ -13,6 +13,7 @@ import digitalHuman_tw from './digital-human/zh-TW.json'
 import dipChatKit_en from './dip-chat-kit/en-US.json'
 import dipChatKit_zh from './dip-chat-kit/zh-CN.json'
 import dipChatKit_tw from './dip-chat-kit/zh-TW.json'
+import decisionAgentLocales from '@/pages/DecisionAgent/AgentWeb/i18n/locales'
 import error_en from './error/en-US.json'
 import error_zh from './error/zh-CN.json'
 import error_tw from './error/zh-TW.json'
@@ -45,6 +46,7 @@ import workPlan_zh from './work-plan/zh-CN.json'
 import workPlan_tw from './work-plan/zh-TW.json'
 
 const zh_CN = {
+  ...decisionAgentLocales['zh-CN'],
   ...error_zh,
   ...global_zh,
   ...history_zh,
@@ -63,6 +65,7 @@ const zh_CN = {
 }
 
 const zh_TW = {
+  ...decisionAgentLocales['zh-TW'],
   ...error_tw,
   ...global_tw,
   ...history_tw,
@@ -81,6 +84,7 @@ const zh_TW = {
 }
 
 const en_US = {
+  ...decisionAgentLocales['en-US'],
   ...error_en,
   ...global_en,
   ...history_en,

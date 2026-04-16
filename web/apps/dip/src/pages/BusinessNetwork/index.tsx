@@ -56,7 +56,7 @@ const BusinessNetwork = () => {
     })
   }, [currentMenu.path, language, navigate, navigateToMicroWidget, userInfo?.id])
 
-  /** URL：?hidesidebar=true 隐藏侧栏；?hideHeaderPath=true 隐藏顶栏面包屑；离开本页时恢复 */
+  /** URL：?hidesidebar=true 隐藏侧栏；?hideHeaderPath=true 隐藏顶栏面包屑 */
   useEffect(() => {
     const params = new URLSearchParams(location.search)
     const hideSidebar = params.get('hidesidebar') === 'true'
@@ -64,6 +64,12 @@ const BusinessNetwork = () => {
     const store = useGlobalLayoutStore.getState()
     store.setBusinessSiderHidden(hideSidebar)
     store.setBusinessHeaderBreadcrumbHidden(hideHeaderBreadcrumb)
+  }, [location.search])
+
+  /** 离开业务知识网络时恢复页面壳状态 */
+  useEffect(() => {
+    const store = useGlobalLayoutStore.getState()
+
     return () => {
       store.setBusinessSiderHidden(false)
       store.setBusinessHeaderBreadcrumbHidden(false)

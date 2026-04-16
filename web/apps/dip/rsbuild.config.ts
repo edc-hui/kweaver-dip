@@ -1,6 +1,7 @@
 import { defineConfig } from '@rsbuild/core';
 import { pluginReact } from '@rsbuild/plugin-react';
 import { pluginLess } from '@rsbuild/plugin-less';
+import { pluginNodePolyfill } from '@rsbuild/plugin-node-polyfill';
 import { pluginSvgr } from '@rsbuild/plugin-svgr';
 import { Agent as HttpsAgent } from 'https';
 import { rsbuildMiddlewarePlugin } from './rsbuild-plugin-middleware';
@@ -121,6 +122,7 @@ export default defineConfig({
       },
     }),
     pluginSvgr(),
+    pluginNodePolyfill(),
     // 开发环境中间件插件：处理登录和服务转发
     rsbuildMiddlewarePlugin(),
   ],
@@ -136,6 +138,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': './src',
+      '@decision-agent': './src/pages/DecisionAgent/AgentWeb',
     },
     extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
   },

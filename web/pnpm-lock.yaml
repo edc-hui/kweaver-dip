@@ -448,6 +448,12 @@ importers:
 
   apps/dip:
     dependencies:
+      '@aishu-tech/components':
+        specifier: ^1.0.2
+        version: 1.0.2
+      '@ant-design/cssinjs':
+        specifier: 1.24.0
+        version: 1.24.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@ant-design/icons':
         specifier: ^6.1.0
         version: 6.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -457,6 +463,9 @@ importers:
       '@ant-design/x-markdown':
         specifier: ^2.4.0
         version: 2.4.0(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@braintree/sanitize-url':
+        specifier: 6.0.2
+        version: 6.0.2
       '@dnd-kit/core':
         specifier: ^6.1.0
         version: 6.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -472,6 +481,15 @@ importers:
       '@kweaver-web/i18n':
         specifier: workspace:*
         version: link:../../packages/i18n
+      '@microsoft/fetch-event-source':
+        specifier: 2.0.1
+        version: 2.0.1
+      '@monaco-editor/react':
+        specifier: 4.6.0
+        version: 4.6.0(monaco-editor@0.55.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-spring/web':
+        specifier: 9.7.5
+        version: 9.7.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tiptap/core':
         specifier: ^3.19.0
         version: 3.20.1(@tiptap/pm@3.20.1)
@@ -595,6 +613,12 @@ importers:
       '@tiptap/y-tiptap':
         specifier: ^3.0.0
         version: 3.0.2(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6)(y-protocols@1.0.7(yjs@13.6.29))(yjs@13.6.29)
+      '@vavt/rt-extension':
+        specifier: 3.0.0
+        version: 3.0.0(md-editor-rt@6.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+      ahooks:
+        specifier: 3.7.8
+        version: 3.7.8(react@18.3.1)
       antd:
         specifier: ^6.0.0
         version: 6.3.2(date-fns@2.30.0)(moment@2.30.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -607,9 +631,18 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      cropperjs:
+        specifier: '1'
+        version: 1.6.2
+      css.escape:
+        specifier: 1.5.1
+        version: 1.5.1
       dayjs:
         specifier: ^1.11.19
         version: 1.11.19
+      dompurify:
+        specifier: 2.3.10
+        version: 2.3.10
       echarts:
         specifier: ^6.0.0
         version: 6.0.0
@@ -622,9 +655,18 @@ importers:
       highlight.js:
         specifier: ^11.0.0
         version: 11.11.1
+      immutable:
+        specifier: 3.8.3
+        version: 3.8.3
       js-cookie:
         specifier: ^3.0.5
         version: 3.0.5
+      js-file-download:
+        specifier: 0.4.12
+        version: 0.4.12
+      js-yaml:
+        specifier: 4.1.0
+        version: 4.1.0
       katex:
         specifier: ^0.16.0
         version: 0.16.38
@@ -637,6 +679,12 @@ importers:
       mac-scrollbar:
         specifier: ^0.13.8
         version: 0.13.8
+      markdown-it-link-attributes:
+        specifier: 4.0.1
+        version: 4.0.1
+      md-editor-rt:
+        specifier: 6.1.0
+        version: 6.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       mdast-util-from-markdown:
         specifier: ^2.0.0
         version: 2.0.3
@@ -646,12 +694,18 @@ importers:
       mermaid:
         specifier: ^11.0.0
         version: 11.13.0
+      nanoid:
+        specifier: 3.3.11
+        version: 3.3.11
       plantuml-encoder:
         specifier: ^1.4.0
         version: 1.4.0
       plyr:
         specifier: ^3.8.4
         version: 3.8.4
+      prop-types:
+        specifier: 15.8.1
+        version: 15.8.1
       prosemirror-model:
         specifier: ^1.20.0
         version: 1.25.4
@@ -664,21 +718,45 @@ importers:
       qiankun:
         specifier: ^2.10.16
         version: 2.10.16
+      qs:
+        specifier: 6.14.0
+        version: 6.14.0
       query-string:
         specifier: ^9.3.1
         version: 9.3.1
+      randexp:
+        specifier: 0.5.3
+        version: 0.5.3
+      randombytes:
+        specifier: 2.1.0
+        version: 2.1.0
       react:
         specifier: ^18.3.1
         version: 18.3.1
+      react-copy-to-clipboard:
+        specifier: 5.1.0
+        version: 5.1.0(react@18.3.1)
+      react-debounce-input:
+        specifier: 3.3.0
+        version: 3.3.0(react@18.3.1)
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
+      react-immutable-proptypes:
+        specifier: 2.2.0
+        version: 2.2.0(immutable@3.8.3)
       react-intl-universal:
         specifier: ^2.13.4
         version: 2.13.4(react@18.3.1)
+      react-resizable:
+        specifier: 3.0.5
+        version: 3.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-router-dom:
         specifier: ^7.9.6
         version: 7.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-syntax-highlighter:
+        specifier: 15.6.6
+        version: 15.6.6(react@18.3.1)
       react-virtualized-auto-sizer:
         specifier: ^1.0.26
         version: 1.0.26(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -688,6 +766,9 @@ importers:
       react-window:
         specifier: ^2.2.6
         version: 2.2.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-window-v1:
+        specifier: npm:react-window@1.8.11
+        version: react-window@1.8.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       remark-breaks:
         specifier: ^4.0.0
         version: 4.0.0
@@ -709,9 +790,27 @@ importers:
       remark-stringify:
         specifier: ^11.0.0
         version: 11.0.0
+      remarkable:
+        specifier: 2.0.1
+        version: 2.0.1
+      screenfull:
+        specifier: 6.0.2
+        version: 6.0.2
+      sha.js:
+        specifier: 2.4.12
+        version: 2.4.12
       smooth-scroll-into-view-if-needed:
         specifier: ^2.0.2
         version: 2.0.2
+      sql-formatter:
+        specifier: 15.6.5
+        version: 15.6.5
+      swagger-client:
+        specifier: 3.37.1
+        version: 3.37.1
+      swagger-ui-react:
+        specifier: 4.18.1
+        version: 4.18.1(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       tippy.js:
         specifier: ^6.3.0
         version: 6.3.7
@@ -724,6 +823,12 @@ importers:
       unist-util-visit:
         specifier: ^5.0.0
         version: 5.1.0
+      xml:
+        specifier: 1.0.1
+        version: 1.0.1
+      xml-but-prettier:
+        specifier: 1.0.1
+        version: 1.0.1
       y-protocols:
         specifier: ^1.0.6
         version: 1.0.7(yjs@13.6.29)
@@ -743,6 +848,9 @@ importers:
       '@rsbuild/plugin-less':
         specifier: ^1.5.0
         version: 1.6.0(@rsbuild/core@1.7.3)
+      '@rsbuild/plugin-node-polyfill':
+        specifier: ^1.4.2
+        version: 1.4.4(@rsbuild/core@1.7.3)
       '@rsbuild/plugin-react':
         specifier: ^1.4.2
         version: 1.4.5(@rsbuild/core@1.7.3)
@@ -7710,10 +7818,6 @@ packages:
     resolution: {integrity: sha512-a54IwgWPaeBCAAsv13YgmALOF1elABB08FxO9i+r4VFk5Vl4pKokRPeX8u5TCgSsPi6ec1otfLjdOpVcgbpshg==}
     hasBin: true
 
-  markdown-it@14.1.1:
-    resolution: {integrity: sha512-BuU2qnTti9YKgK5N+IeMubp14ZUKUUw7yeJbkjtosvHiP0AZ5c8IAgEMk79D0eC8F23r4Ac/q8cAIFdm2FtyoA==}
-    hasBin: true
-
   markdown-table@3.0.4:
     resolution: {integrity: sha512-wiYz4+JrLyb/DqW2hkFJxP7Vd7JuTDm77fvbM8VfEQdmSMqcImWeeRbHwZjBjIFki/VaMK2BhFi7oUUZeM5bqw==}
 
@@ -14611,6 +14715,11 @@ snapshots:
       '@types/react': 18.3.20
       hoist-non-react-statics: 3.3.2
 
+  '@types/hoist-non-react-statics@3.3.7(@types/react@18.3.28)':
+    dependencies:
+      '@types/react': 18.3.28
+      hoist-non-react-statics: 3.3.2
+
   '@types/http-errors@2.0.5': {}
 
   '@types/istanbul-lib-coverage@2.0.6': {}
@@ -15318,8 +15427,8 @@ snapshots:
       ahooks-v3-count: 1.0.0
       dayjs: 1.11.19
       intersection-observer: 0.12.2
-      js-cookie: 2.2.1
-      lodash: 4.17.21
+      js-cookie: 2.2.0
+      lodash: 4.17.23
       react: 18.3.1
       resize-observer-polyfill: 1.5.1
       screenfull: 5.2.0
@@ -19072,9 +19181,9 @@ snapshots:
     dependencies:
       tmpl: 1.0.5
 
-  markdown-it-image-figures@2.1.1(markdown-it@14.1.1):
+  markdown-it-image-figures@2.1.1(markdown-it@14.1.0):
     dependencies:
-      markdown-it: 14.1.1
+      markdown-it: 14.1.0
 
   markdown-it-link-attributes@4.0.1: {}
 
@@ -19083,15 +19192,6 @@ snapshots:
   markdown-it-sup@2.0.0: {}
 
   markdown-it@14.1.0:
-    dependencies:
-      argparse: 2.0.1
-      entities: 4.5.0
-      linkify-it: 5.0.0
-      mdurl: 2.0.0
-      punycode.js: 2.3.1
-      uc.micro: 2.1.0
-
-  markdown-it@14.1.1:
     dependencies:
       argparse: 2.0.1
       entities: 4.5.0
@@ -19137,8 +19237,8 @@ snapshots:
       codemirror: 6.0.2
       lru-cache: 11.2.7
       lucide-react: 0.542.0(react@18.3.1)
-      markdown-it: 14.1.1
-      markdown-it-image-figures: 2.1.1(markdown-it@14.1.1)
+      markdown-it: 14.1.0
+      markdown-it-image-figures: 2.1.1(markdown-it@14.1.0)
       markdown-it-sub: 2.0.0
       markdown-it-sup: 2.0.0
       medium-zoom: 1.1.0
@@ -20896,6 +20996,21 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       redux: 4.2.1
 
+  react-redux@8.1.3(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(redux@4.2.1):
+    dependencies:
+      '@babel/runtime': 7.28.6
+      '@types/hoist-non-react-statics': 3.3.7(@types/react@18.3.28)
+      '@types/use-sync-external-store': 0.0.3
+      hoist-non-react-statics: 3.3.2
+      react: 18.3.1
+      react-is: 18.3.1
+      use-sync-external-store: 1.6.0(react@18.3.1)
+    optionalDependencies:
+      '@types/react': 18.3.28
+      '@types/react-dom': 18.3.7(@types/react@18.3.28)
+      react-dom: 18.3.1(react@18.3.1)
+      redux: 4.2.1
+
   react-refresh@0.16.0: {}
 
   react-refresh@0.18.0: {}
@@ -22000,7 +22115,7 @@ snapshots:
       immutable: 3.8.3
       js-file-download: 0.4.12
       js-yaml: 4.1.0
-      lodash: 4.17.21
+      lodash: 4.17.23
       patch-package: 6.5.1
       prop-types: 15.8.1
       randexp: 0.5.3
@@ -22013,6 +22128,50 @@ snapshots:
       react-immutable-pure-component: 2.2.2(immutable@3.8.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-inspector: 6.0.2(react@18.3.1)
       react-redux: 8.1.3(@types/react-dom@18.3.5(@types/react@18.3.20))(@types/react@18.3.20)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(redux@4.2.1)
+      react-syntax-highlighter: 15.6.6(react@18.3.1)
+      redux: 4.2.1
+      redux-immutable: 4.0.0(immutable@3.8.3)
+      remarkable: 2.0.1
+      reselect: 4.1.8
+      serialize-error: 8.1.0
+      sha.js: 2.4.12
+      swagger-client: 3.37.1
+      url-parse: 1.5.10
+      xml: 1.0.1
+      xml-but-prettier: 1.0.1
+      zenscroll: 4.0.2
+    transitivePeerDependencies:
+      - '@types/react'
+      - '@types/react-dom'
+      - debug
+      - react-native
+
+  swagger-ui-react@4.18.1(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      '@babel/runtime-corejs3': 7.29.2
+      '@braintree/sanitize-url': 6.0.2
+      base64-js: 1.5.1
+      classnames: 2.5.1
+      css.escape: 1.5.1
+      deep-extend: 0.6.0
+      dompurify: 2.3.10
+      ieee754: 1.2.1
+      immutable: 3.8.3
+      js-file-download: 0.4.12
+      js-yaml: 4.1.0
+      lodash: 4.17.23
+      patch-package: 6.5.1
+      prop-types: 15.8.1
+      randexp: 0.5.3
+      randombytes: 2.1.0
+      react: 18.3.1
+      react-copy-to-clipboard: 5.1.0(react@18.3.1)
+      react-debounce-input: 3.3.0(react@18.3.1)
+      react-dom: 18.3.1(react@18.3.1)
+      react-immutable-proptypes: 2.2.0(immutable@3.8.3)
+      react-immutable-pure-component: 2.2.2(immutable@3.8.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-inspector: 6.0.2(react@18.3.1)
+      react-redux: 8.1.3(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(redux@4.2.1)
       react-syntax-highlighter: 15.6.6(react@18.3.1)
       redux: 4.2.1
       redux-immutable: 4.0.0(immutable@3.8.3)

@@ -22,6 +22,9 @@
     "paths": {
       "@/*": [
         "src/*"
+      ],
+      "@decision-agent/*": [
+        "src/pages/DecisionAgent/AgentWeb/*"
       ]
     },
     /* type checking */

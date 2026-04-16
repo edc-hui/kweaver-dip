@@ -150,11 +150,13 @@ export const businessMenuItems: BusinessMenuItem[] = [
         labelKey: 'routes.businessMenu.myAgents',
         path: buildBusinessNetworkPath('/my-agents'),
         page: {
-          type: 'micro-app',
-          app: {
-            name: 'my-agent-list',
-            entry: '//ip:port/agent-web/my-agents.html',
-          },
+          type: 'component',
+          componentKey: 'decision-agent-list'
+          // type: 'micro-app',
+          // app: {
+          //   name: 'my-agent-list',
+          //   entry: '//ip:port/agent-web/my-agents.html',
+          // },
         },
       },
       {
@@ -162,11 +164,13 @@ export const businessMenuItems: BusinessMenuItem[] = [
         labelKey: 'routes.businessMenu.agent-square',
         path: buildBusinessNetworkPath('/agent-square'),
         page: {
-          type: 'micro-app',
-          app: {
-            name: 'agent-square',
-            entry: '//ip:port/agent-web/square.html',
-          },
+          type: 'component',
+          componentKey: 'decision-agent-square'
+          // type: 'micro-app',
+          // app: {
+          //   name: 'agent-square',
+          //   entry: '//ip:port/agent-web/square.html',
+          // },
         },
       },
     ],

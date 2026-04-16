@@ -1,0 +1,24 @@
+.dip-button {
+  &.dip-btn {
+    &.dip-btn-text {
+      padding: 0;
+      &:not(:disabled),
+      :not(.dip-btn-disabled) {
+        &:hover {
+          background: unset;
+          color: var(--dip-text-color);
+        }
+      }
+    }
+    &.dip-btn-link,
+    &.dip-btn-variant-link {
+      padding: 0;
+      //&:not(:disabled), :not(.dip-btn-disabled) {
+      //  &:hover {
+      //    background: unset;
+      //    color: var(--dip-text-color);
+      //  }
+      //}
+    }
+  }
+}
