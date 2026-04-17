@@ -8,7 +8,13 @@ import { registerDolphinLanguage } from './dolphin/registerDolphinLanguage';
 import { getDecisionAgentPublicAssetPath } from '@/pages/DecisionAgent/utils';
 import { Chrome_DevTools_Theme, Clouds_Theme, Dolphin_Theme } from '../static';
 
+let monacoInitPromise: Promise<void> | null = null;
+
 export const initAdMonacoEditor = () => {
+  if (monacoInitPromise) {
+    return monacoInitPromise;
+  }
+
   const baseUrl = getHttpBaseUrl();
   const lang = getConfig('lang');
 
@@ -26,7 +32,7 @@ export const initAdMonacoEditor = () => {
   loadAndApplyCodiconFont(baseUrl, resourcePrefix);
 
   // 定义主题, 定义完成的主题  可以在onMount的时候 使用
-  loader.init().then(monaco => {
+  monacoInitPromise = loader.init().then(monaco => {
     monaco.editor.defineTheme(Clouds_Theme, Clouds);
     monaco.editor.defineTheme(Chrome_DevTools_Theme, DevTools);
     monaco.editor.defineTheme(Dolphin_Theme, Dolphin);
@@ -34,6 +40,8 @@ export const initAdMonacoEditor = () => {
     registerDolphinLanguage(monaco);
     // registerPythonLanguage(monaco);
   });
+
+  return monacoInitPromise;
 };
 
 function loadAndApplyCodiconFont(baseUrl: string, resourcePrefix: string) {

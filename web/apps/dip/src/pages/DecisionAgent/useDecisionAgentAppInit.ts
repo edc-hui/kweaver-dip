@@ -1,7 +1,6 @@
 import { App as AntdApp } from 'antd'
 import { useEffect, useState } from 'react'
 import { apis } from '@aishu-tech/components/dist/dip-components.min'
-import { initAdMonacoEditor } from '@decision-agent/components/Editor/AdMonacoEditor/assitants'
 import { setConfig } from '@decision-agent/utils/http'
 import { LangType } from '@decision-agent/utils/http/types'
 import { mapWorkbenchLanguage } from '@/pages/_shared/menu-workbench/isfUserContext'
@@ -65,8 +64,6 @@ export const useDecisionAgentAppInit = () => {
       theme,
       popupContainer,
     })
-
-    initAdMonacoEditor()
 
     setIsReady(true)
   }, [language, message])

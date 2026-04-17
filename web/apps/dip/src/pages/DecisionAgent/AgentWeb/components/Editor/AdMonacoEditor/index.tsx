@@ -2,13 +2,12 @@
 import React, { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import type { DiffEditorProps, EditorProps, Monaco } from '@monaco-editor/react';
 import Editor, { DiffEditor } from '@monaco-editor/react';
+import { Spin } from 'antd';
 import classNames from 'classnames';
 import './styles.less';
-// import { initAdMonacoEditor } from './assitants';
+import { initAdMonacoEditor } from './assitants';
 import { Chrome_DevTools_Theme } from '../static';
 import useLatestState from '@decision-agent/hooks/useLatestState';
-
-// initAdMonacoEditor();
 
 type AdMonacoEditorCommonProps = {
   bordered?: boolean;
@@ -73,6 +72,7 @@ const MonacoEditor = forwardRef<AdMonacoEditorRef, MonacoEditorProps>((props, re
     ...restMonacoProps
   } = props;
   const [loaded, setLoaded] = useState<boolean>(false);
+  const [monacoReady, setMonacoReady] = useState(false);
   const [editorHeight, setEditorHeight, getEditorHeight] = useLatestState(
     height === 'auto' ? (minHeight ? minHeight : 22) : height
   ); // 初始高度
@@ -89,6 +89,26 @@ const MonacoEditor = forwardRef<AdMonacoEditorRef, MonacoEditorProps>((props, re
     getMonacoInstance: () => monacoRef.current,
     getEditorInstance: () => editorRef.current,
   }));
+
+  useEffect(() => {
+    let isMounted = true;
+
+    initAdMonacoEditor()
+      .then(() => {
+        if (isMounted) {
+          setMonacoReady(true);
+        }
+      })
+      .catch(() => {
+        if (isMounted) {
+          setMonacoReady(false);
+        }
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   // 设置主题
   useEffect(() => {
@@ -215,16 +235,22 @@ const MonacoEditor = forwardRef<AdMonacoEditorRef, MonacoEditorProps>((props, re
           {placeholder}
         </div>
       )}
-      {type === 'editor' ? (
-        <Editor
-          height={editorHeight}
-          onMount={handleMount}
-          onChange={handelChange}
-          options={mergeOptions}
-          {...restMonacoProps}
-        />
+      {monacoReady ? (
+        type === 'editor' ? (
+          <Editor
+            height={editorHeight}
+            onMount={handleMount}
+            onChange={handelChange}
+            options={mergeOptions}
+            {...restMonacoProps}
+          />
+        ) : (
+          <DiffEditor height={editorHeight} onMount={handleMount} options={mergeOptions} {...restMonacoProps} />
+        )
       ) : (
-        <DiffEditor height={editorHeight} onMount={handleMount} options={mergeOptions} {...restMonacoProps} />
+        <div className="dip-w-100 dip-h-100 dip-flex dip-items-center dip-justify-center">
+          <Spin />
+        </div>
       )}
     </div>
   );
