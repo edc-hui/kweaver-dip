@@ -239,7 +239,7 @@ const DecisionAgent = ({
     setIsExportMode(false);
     setSelectedIdsForExport([]);
     setHighlightId('');
-  }, [modeFromProps, mode]);
+  }, [modeFromProps]);
 
   const getFilterParams = () => {
     const filterParams: any = {};
