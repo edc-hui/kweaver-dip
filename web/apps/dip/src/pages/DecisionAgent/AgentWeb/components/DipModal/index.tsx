@@ -16,9 +16,9 @@ const DipModal: React.FC<DipModalProps> = props => {
   const windowSize = useWindowSize();
   useEffect(() => {
     if (fullScreen && adaptive) {
-      const headerDOM = document.querySelector('.ant-modal-header')!;
-      const contentDOM: HTMLDivElement = document.querySelector('.ant-modal-body')!;
-      const footerDOM = document.querySelector('.ant-modal-footer');
+      const headerDOM = document.querySelector('.dip-modal-header')!;
+      const contentDOM: HTMLDivElement = document.querySelector('.dip-modal-body')!;
+      const footerDOM = document.querySelector('.dip-modal-footer');
       let height = windowSize.height - 48 - headerDOM.clientHeight;
       if (footerDOM) {
         height -= footerDOM.clientHeight;

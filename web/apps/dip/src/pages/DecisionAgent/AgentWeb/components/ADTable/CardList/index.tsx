@@ -313,7 +313,7 @@ const AdTableCardList = (props: ADTableProps & { isFilter: boolean }) => {
   const paginationConfig = useMemo(() => {
     if (pagination) {
       return {
-        className: `${prefixCls}-pagination ant-table-pagination ant-table-pagination-right`,
+        className: `${prefixCls}-pagination dip-table-pagination dip-table-pagination-right`,
         showTotal: (total: number) => intl.get('knowledge.total', { total }),
         showSizeChanger: false,
         ...pagination,
