@@ -26,7 +26,7 @@ import intl from 'react-intl-universal';
 import { useMicroWidgetProps } from '@decision-agent/hooks';
 import ConversationListModal from '../ConversationListModal';
 import dayjs from 'dayjs';
-import { getDecisionAgentBasePath } from '@/pages/DecisionAgent/utils';
+import { getDecisionAgentBasePath, normalizeDecisionAgentReturnPath } from '@/pages/DecisionAgent/utils';
 
 const ConversationList = ({ startNewConversation, className }: any) => {
   const microWidgetProps = useMicroWidgetProps();
@@ -232,7 +232,7 @@ const ConversationList = ({ startNewConversation, className }: any) => {
                 const preRouteIsMicroApp = searchParams.get('preRouteIsMicroApp');
                 // 说明之前的路由是其他微应用的一个页面
                 if (preRouteIsMicroApp === 'true') {
-                  microWidgetProps.navigate(preRoute ?? '/studio/home');
+                  microWidgetProps.navigate(normalizeDecisionAgentReturnPath(preRoute));
                 } else {
                   let url = preRoute ?? getDecisionAgentBasePath(location.pathname);
                   const filterParams = getParam('filterParams');

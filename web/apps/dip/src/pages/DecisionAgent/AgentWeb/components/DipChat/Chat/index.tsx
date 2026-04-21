@@ -30,7 +30,7 @@ import ColorLoading from '@decision-agent/components/DipChat/components/ColorLoa
 import intl from 'react-intl-universal';
 import { getParam } from '@decision-agent/utils/handle-function';
 import dayjs from 'dayjs';
-import { getDecisionAgentBasePath } from '@/pages/DecisionAgent/utils';
+import { getDecisionAgentBasePath, normalizeDecisionAgentReturnPath } from '@/pages/DecisionAgent/utils';
 
 const DipChat = () => {
   const microWidgetProps = useMicroWidgetProps();
@@ -145,15 +145,15 @@ const DipChat = () => {
                 } else {
                   const preRoute = searchParams.get('preRoute');
                   const preRouteIsMicroApp = searchParams.get('preRouteIsMicroApp');
-                if (preRouteIsMicroApp === 'true') {
-                  microWidgetProps.navigate(preRoute ?? '/studio/home');
-                } else {
-                  let url = preRoute ?? getDecisionAgentBasePath(location.pathname);
-                  const filterParams = getParam('filterParams');
-                  if (filterParams) {
-                    url += `?filterParams=${filterParams}`;
-                  }
-                  navigate(url);
+                  if (preRouteIsMicroApp === 'true') {
+                    microWidgetProps.navigate(normalizeDecisionAgentReturnPath(preRoute));
+                  } else {
+                    let url = preRoute ?? getDecisionAgentBasePath(location.pathname);
+                    const filterParams = getParam('filterParams');
+                    if (filterParams) {
+                      url += `?filterParams=${filterParams}`;
+                    }
+                    navigate(url);
                   }
                 }
               }}

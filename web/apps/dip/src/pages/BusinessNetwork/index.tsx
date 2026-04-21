@@ -1,4 +1,5 @@
 import { useEffect, useMemo } from 'react'
+import type { NavigateOptions } from 'react-router-dom'
 import { useLocation, useNavigate } from 'react-router-dom'
 import {
   BUSINESS_NETWORK_BASE_PATH,
@@ -41,14 +42,14 @@ const BusinessNetwork = () => {
       toggleSideBarShow: (show: boolean) => {
         useGlobalLayoutStore.getState().setBusinessSiderHidden(!show)
       },
-      navigate: (path: string) => {
+      navigate: (path: string, options?: NavigateOptions) => {
         let newPath = path.replace(BASE_PATH, '')
 
         // 解决从agent无法跳转回业务知识网络页面的问题
         if (newPath.endsWith('/vega')) {
           newPath = `${newPath}/ontology`
         }
-        navigate(newPath)
+        navigate(newPath, options)
       },
       changeCustomPathComponent: (param: { label: string } | null) => {
         useGlobalLayoutStore.getState().setBusinessHeaderCustomBreadcrumbLabel(param?.label ?? null)
@@ -59,12 +60,15 @@ const BusinessNetwork = () => {
   /** URL：?hidesidebar=true 隐藏侧栏；?hideHeaderPath=true 隐藏顶栏面包屑 */
   useEffect(() => {
     const params = new URLSearchParams(location.search)
-    const hideSidebar = params.get('hidesidebar') === 'true'
+    const isAgentUsagePage =
+      location.pathname.startsWith('/business-network/my-agents/usage') ||
+      location.pathname.startsWith('/business-network/agent-square/usage')
+    const hideSidebar = isAgentUsagePage || params.get('hidesidebar') === 'true'
     const hideHeaderBreadcrumb = params.get('hideHeaderPath') === 'true'
     const store = useGlobalLayoutStore.getState()
     store.setBusinessSiderHidden(hideSidebar)
     store.setBusinessHeaderBreadcrumbHidden(hideHeaderBreadcrumb)
-  }, [location.search])
+  }, [location.pathname, location.search])
 
   /** 离开业务知识网络时恢复页面壳状态 */
   useEffect(() => {

@@ -1,5 +1,6 @@
 import { loadMicroApp } from 'qiankun';
 import type { UserInfo } from '@/apis/dip-hub/user';
+import type { NavigateOptions } from 'react-router-dom';
 import { businessLeafMenuItems } from '@/components/Sider/BusinessSider/menus';
 import { getMenuWorkbenchBasePathByMicroWidgetName } from '@/pages/_shared/menu-workbench/getBasePathByMicroWidgetName';
 import { buildMicroWidgetUserInfoPayload, mapWorkbenchLanguage } from '@/pages/_shared/menu-workbench/isfUserContext';
@@ -16,7 +17,7 @@ interface BuildBusinessMicroAppPropsOptions {
   userInfo?: UserInfo;
   navigateToMicroWidget: (params: NavigateToMicroWidgetParams) => void;
   toggleSideBarShow: (show: boolean) => void;
-  navigate: (path: string) => void;
+  navigate: (path: string, options?: NavigateOptions) => void;
   changeCustomPathComponent: (param: { label: string } | null) => void;
 }
 
